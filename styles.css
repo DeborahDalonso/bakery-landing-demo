@@ -1,0 +1,191 @@
+/* Paleta: chocolate e cereja, com pistache só como acento. Tudo o que muda de cliente para cliente está aqui. */
+:root {
+  --fundo: #fbf5f2;
+  --superficie: #ffffff;
+  --cacau: #3b2219;
+  --cacau-2: #6e4c40;
+  --muda: #9b8078;
+  --linha: #eedbd4;
+  --rosa: #f1c4c8;
+  --rosa-suave: #fbe6e7;
+  --framboesa: #a61c35;
+  --framboesa-forte: #85122a;
+  --pistache: #a9c99a;
+  --pistache-suave: #e5f0dc;
+  --creme: #f6e3d3;
+  --folha: #5f8a4d;
+  --sombra-bolo: rgba(58, 35, 33, 0.10);
+  --sombra: 0 18px 40px -24px rgba(58, 35, 33, 0.35);
+  --raio: 22px;
+  --largura: 1120px;
+  --gutter: clamp(16px, 5vw, 48px);
+  --titulo: 'Yeseva One', Georgia, serif;
+  --texto: 'Nunito', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; background: var(--fundo); color: var(--cacau); font-family: var(--texto); font-size: 17px; line-height: 1.6; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+h1, h2 { font-family: var(--titulo); font-weight: 400; line-height: 1.08; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h3 { margin: 0; font-size: 1.1rem; font-weight: 800; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--framboesa); outline-offset: 3px; border-radius: 6px; }
+
+.selo {
+  display: inline-block; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--framboesa); margin-bottom: 12px;
+}
+
+.botao {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--framboesa); color: #fff; text-decoration: none; font-weight: 800;
+  padding: 12px 22px; border-radius: 999px; border: 0; cursor: pointer; font: inherit; font-weight: 800;
+  transition: background .2s, transform .2s;
+}
+.botao:hover { background: var(--framboesa-forte); transform: translateY(-1px); }
+.botao-grande { padding: 16px 28px; font-size: 1.05rem; }
+.link { font-weight: 800; color: var(--cacau); text-decoration: none; border-bottom: 2px solid var(--rosa); padding: 4px 2px; }
+.link:hover { border-color: var(--framboesa); }
+
+/* Topo */
+.topo {
+  position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 24px;
+  padding: 12px var(--gutter); background: rgba(255, 247, 245, .9); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linha);
+}
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; line-height: 1.05; font-size: .82rem; color: var(--cacau-2); }
+.marca svg { width: 42px; height: 42px; }
+.marca b { font-family: var(--titulo); font-weight: 400; font-size: 1.15rem; color: var(--cacau); }
+.menu { display: flex; gap: 22px; }
+.menu a { text-decoration: none; font-weight: 700; color: var(--cacau-2); }
+.menu a:hover { color: var(--framboesa); }
+
+/* Hero */
+.hero {
+  max-width: var(--largura); margin: 0 auto; padding: clamp(32px, 6vw, 80px) var(--gutter);
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 5vw, 64px); align-items: center;
+}
+.hero-sub { font-size: 1.15rem; color: var(--cacau-2); margin: 20px 0 30px; max-width: 32em; }
+.hero-acoes { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.hero-fatos { list-style: none; padding: 0; margin: 34px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-fatos li { background: var(--superficie); border: 1px solid var(--linha); border-radius: 999px; padding: 6px 14px; font-size: .9rem; color: var(--cacau-2); }
+.hero-fatos b { color: var(--cacau); }
+.hero-arte { background: radial-gradient(circle at 50% 55%, var(--rosa-suave), transparent 68%); border-radius: 50%; padding: 6%; position: relative; }
+/* Com foto, o desenho some e a foto ocupa o espaço com o topo em arco. */
+.hero-arte:has(.hero-foto) { background: none; padding: 0; border-radius: 0; }
+.hero-arte:has(.hero-foto) svg { display: none; }
+.hero-foto { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 200px 200px var(--raio) var(--raio); box-shadow: var(--sombra); }
+
+/* Seções */
+.secao { max-width: var(--largura); margin: 0 auto; padding: clamp(48px, 7vw, 96px) var(--gutter); }
+.secao-cabecalho { max-width: 36em; margin-bottom: 32px; }
+.secao-cabecalho p:not(.selo) { color: var(--cacau-2); margin-top: 12px; }
+
+/* Vitrine */
+.categorias { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.categoria {
+  font: inherit; font-weight: 800; cursor: pointer; padding: 8px 18px; border-radius: 999px;
+  border: 1px solid var(--linha); background: var(--superficie); color: var(--cacau-2);
+}
+.categoria[aria-selected="true"] { background: var(--cacau); border-color: var(--cacau); color: #fff; }
+.produtos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.produto {
+  background: var(--superficie); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden;
+  display: flex; flex-direction: column; box-shadow: var(--sombra);
+}
+.produto-arte { aspect-ratio: 4 / 3; display: grid; place-items: center; }
+.produto-arte svg { width: 46%; }
+.produto-arte { overflow: hidden; }
+.produto-arte img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.produto:hover .produto-arte img { transform: scale(1.04); }
+.produto-corpo { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.produto-corpo p { color: var(--cacau-2); font-size: .92rem; }
+.produto-rodape { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 10px; }
+.preco { font-weight: 800; font-size: 1.05rem; }
+.preco small { font-weight: 600; color: var(--muda); font-size: .78rem; }
+.qtd { display: flex; align-items: center; gap: 6px; }
+.qtd button {
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--linha); background: var(--fundo);
+  font: inherit; font-weight: 800; font-size: 1.1rem; cursor: pointer; color: var(--cacau);
+}
+.qtd button:hover { border-color: var(--framboesa); color: var(--framboesa); }
+.qtd output { min-width: 34px; text-align: center; font-weight: 800; font-variant-numeric: tabular-nums; }
+.produto.no-pedido { border-color: var(--framboesa); }
+
+/* Passos */
+.passos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.passos li { background: var(--superficie); border: 1px solid var(--linha); border-radius: var(--raio); padding: 24px; }
+.passo-num { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--pistache-suave); color: var(--folha); font-family: var(--titulo); font-size: 1.2rem; margin-bottom: 14px; }
+.passos p { color: var(--cacau-2); margin-top: 8px; font-size: .95rem; }
+
+/* Sobre */
+.sobre { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.sobre-foto {
+  aspect-ratio: 4 / 5; border-radius: var(--raio); display: grid; place-items: center; text-align: center;
+  background: linear-gradient(160deg, var(--rosa), var(--creme) 70%); color: var(--cacau-2); font-weight: 700;
+  position: relative; overflow: hidden;
+}
+.sobre-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sobre-texto h2 { margin-bottom: 18px; }
+.sobre-texto p + p { margin-top: 12px; }
+.sobre-texto p { color: var(--cacau-2); }
+
+/* Depoimentos */
+.depoimentos { background: var(--cacau); color: #fff; max-width: none; }
+.depoimentos > * { max-width: var(--largura); margin-left: auto; margin-right: auto; }
+.depoimentos .selo { color: var(--rosa); }
+.grade-depoimentos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.grade-depoimentos blockquote { margin: 0; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .14); border-radius: var(--raio); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.grade-depoimentos p { font-family: var(--titulo); font-size: 1.15rem; line-height: 1.4; }
+.grade-depoimentos footer { margin-top: auto; color: var(--rosa); font-weight: 800; }
+
+/* Entrega */
+.entrega { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.info { display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; margin: 22px 0 26px; }
+.info dt { font-weight: 800; }
+.info dd { margin: 0; color: var(--cacau-2); }
+.entrega-acoes { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.mapa {
+  aspect-ratio: 5 / 4; border-radius: var(--raio); position: relative; overflow: hidden; border: 1px solid var(--linha);
+  background-color: var(--superficie);
+  background-image: linear-gradient(var(--linha) 1px, transparent 1px), linear-gradient(90deg, var(--linha) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.mapa-pino { position: absolute; left: 50%; top: 45%; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; background: var(--framboesa); transform: translate(-50%, -100%) rotate(-45deg); }
+.mapa-rotulo { position: absolute; left: 50%; top: 56%; transform: translateX(-50%); background: var(--superficie); border: 1px solid var(--linha); border-radius: 999px; padding: 4px 12px; font-size: .85rem; color: var(--cacau-2); }
+
+.rodape { max-width: var(--largura); margin: 0 auto; padding: 0 var(--gutter) 120px; color: var(--cacau-2); font-size: .9rem; }
+.rodape-nota { font-size: .8rem; color: var(--muda); margin-top: 6px; }
+
+/* Barra do pedido */
+.pedido {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 30;
+  width: min(720px, calc(100% - 32px)); display: flex; align-items: center; gap: 14px;
+  background: var(--cacau); color: #fff; border-radius: 999px; padding: 10px 10px 10px 24px;
+  box-shadow: 0 18px 40px -12px rgba(58, 35, 33, .55);
+}
+.pedido[hidden] { display: none; }
+.pedido-resumo { display: flex; flex-direction: column; line-height: 1.2; margin-right: auto; }
+.pedido-qtd { font-size: .85rem; color: var(--rosa); }
+.pedido-total { font-weight: 800; font-size: 1.15rem; }
+.botao-texto { background: none; border: 0; color: var(--rosa); font: inherit; font-weight: 700; cursor: pointer; }
+
+@media (max-width: 900px) {
+  .produtos, .grade-depoimentos, .passos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero { grid-template-columns: 1fr; }
+  .hero-arte { max-width: 340px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .menu, .botao-topo { display: none; }
+  .produtos, .grade-depoimentos, .passos, .sobre, .entrega { grid-template-columns: 1fr; }
+  .sobre-foto { max-width: 320px; }
+  .hero-acoes .botao-grande { width: 100%; }
+  .pedido { border-radius: 20px; flex-wrap: wrap; padding: 12px 14px; }
+  .pedido .botao { width: 100%; }
+  .botao-texto { order: -1; margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .botao, .produto-arte img { transition: none; } }

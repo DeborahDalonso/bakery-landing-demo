@@ -20,6 +20,6 @@ Landing page para confeitaria que trabalha por encomenda. O destaque é a vitrin
 - Fotos otimizadas para carregar rápido.
 - Cores, textos, produtos e preços concentrados em poucos lugares, para adaptar a outra confeitaria rapidamente.
 
-Marca, nomes, preços e depoimentos são fictícios.
+Marca, nomes, preços e depoimentos são fictícios. Fotos meramente ilustrativas, com direitos reservados aos seus autores.
 
 Desenvolvido por [Deborah Dalonso](https://www.linkedin.com/in/deborah-dalonso-482099138).
